@@ -6,9 +6,149 @@
     <title>Web Engineering Lab</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <h1 id="greeting"></h1>
 
+  <body>
+    <!-- Task 1: Skip Link and Header -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+      <h1 id="greeting"></h1>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#schedule" aria-current="location">Office Hours</a></li>
+          <li><a href="#feedback">Send Feedback</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Task 2: Main Content -->
+    <main id="main-content">
+      <!-- Task 3: Accessible Office Hours Table -->
+      <section id="schedule">
+        <h2>Office Hours</h2>
+
+        <table>
+          <caption>
+            Weekly office hours
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>
+                <time datetime="10:00">10:00</time>–
+                <time datetime="11:00">11:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Wednesday</td>
+              <td>
+                <time datetime="12:00">12:00</time>–
+                <time datetime="13:00">13:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Friday</td>
+              <td>
+                <time datetime="14:00">14:00</time>–
+                <time datetime="15:00">15:00</time>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Task 4: Informative SVG -->
+        <figure>
+          <svg
+            role="img"
+            aria-labelledby="location-title"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+          >
+            <title id="location-title">Office location icon</title>
+            <circle cx="12" cy="12" r="9" fill="#0b3d91" />
+            <circle cx="12" cy="12" r="3" fill="white" />
+          </svg>
+
+          <figcaption>Office hours are held in Room 214.</figcaption>
+        </figure>
+      </section>
+
+      <!-- Task 4: Decorative SVG Divider -->
+      <svg aria-hidden="true" width="100%" height="20" viewBox="0 0 300 20">
+        <line x1="0" y1="10" x2="300" y2="10" stroke="#0b3d91" />
+      </svg>
+
+      <!-- Tasks 5–7: Accessible Feedback Form -->
+      <section id="feedback">
+        <h2>Send Feedback</h2>
+
+        <form>
+          <!-- Name Field -->
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <!-- Email Field with Hint -->
+          <div>
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              aria-describedby="email-hint"
+              required
+            />
+            <p id="email-hint">Enter a valid email address.</p>
+          </div>
+
+          <!-- Topic Radio Group -->
+          <fieldset>
+            <legend>Topic:</legend>
+
+            <input
+              type="radio"
+              id="general"
+              name="topic"
+              value="general"
+              required
+            />
+            <label for="general">General</label>
+
+            <input type="radio" id="technical" name="topic" value="technical" />
+            <label for="technical">Technical</label>
+          </fieldset>
+
+          <!-- Message Field -->
+          <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Task 2: Footer -->
+    <footer>
+      <address>Contact your instructor for help.</address>
+    </footer>
+
+    <!-- Existing JavaScript -->
     <script type="module" src="script.js"></script>
   </body>
 </html>

@@ -8,7 +8,6 @@
   </head>
 
   <body>
-    <!-- Task 1: Skip Link and Header -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
@@ -16,17 +15,21 @@
 
       <nav aria-label="Main navigation">
         <ul>
-          <li><a href="#schedule" aria-current="location">Office Hours</a></li>
-          <li><a href="#feedback">Send Feedback</a></li>
+          <li>
+            <a href="#schedule" class="nav-link" aria-current="location">
+              Office Hours
+            </a>
+          </li>
+          <li>
+            <a href="#feedback" class="nav-link">Send Feedback</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <!-- Task 2: Main Content -->
     <main id="main-content">
-      <!-- Task 3: Accessible Office Hours Table -->
       <section id="schedule">
-        <h2>Office Hours</h2>
+        <h2 id="schedule-heading">Office Hours</h2>
 
         <table>
           <caption>
@@ -67,7 +70,6 @@
           </tbody>
         </table>
 
-        <!-- Task 4: Informative SVG -->
         <figure>
           <svg
             role="img"
@@ -77,20 +79,20 @@
             viewBox="0 0 24 24"
           >
             <title id="location-title">Office location icon</title>
-            <circle cx="12" cy="12" r="9" fill="#0b3d91" />
+            <circle cx="12" cy="12" r="9" fill="currentColor" />
             <circle cx="12" cy="12" r="3" fill="white" />
           </svg>
 
-          <figcaption>Office hours are held in Room 214.</figcaption>
+          <figcaption class="text-muted">
+            Office hours are held in Room 214.
+          </figcaption>
         </figure>
       </section>
 
-      <!-- Task 4: Decorative SVG Divider -->
       <svg aria-hidden="true" width="100%" height="20" viewBox="0 0 300 20">
-        <line x1="0" y1="10" x2="300" y2="10" stroke="#0b3d91" />
+        <line x1="0" y1="10" x2="300" y2="10" stroke="currentColor" />
       </svg>
 
-      <!-- Tasks 5–7: Accessible Feedback Form -->
       <section id="feedback">
         <h2>Send Feedback</h2>
 
@@ -111,7 +113,9 @@
               aria-describedby="email-hint"
               required
             />
-            <p id="email-hint">Enter a valid email address.</p>
+            <span id="email-hint" class="text-muted">
+              Enter a valid email address.
+            </span>
           </div>
 
           <!-- Topic Radio Group -->
@@ -143,7 +147,7 @@
       </section>
     </main>
 
-    <!-- Task 2: Footer -->
+    <!-- Footer -->
     <footer>
       <address>Contact your instructor for help.</address>
     </footer>
